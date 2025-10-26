@@ -1,12 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-#define endl '\n'
 int main ()
 {
     vector<int> v;
-    optimize();
 
     v.push_back( 1 );
     v.push_back( 2 );
@@ -27,7 +23,7 @@ int main ()
     for ( int i = 0; i < v1.size(); i++ ) cout << v1[i] << " "; /// 2 3 4
     cout << endl;
 
-    v.clear();
+    v.clear(); // vector clear kore dey
     cout << v.size() << endl; /// 0
     cout << v.empty() << endl; /// 1
     cout << v1.empty() << endl; /// 0
@@ -38,6 +34,8 @@ int main ()
     cout << endl;
 
     vector<int> a(5);
+
+    //vector<int> aa(10,1); // 10 ta create hobe jar sob value 1 hobe
 
     cout << a.size() << endl; /// 5
     for ( int i = 0; i < a.size(); i++ ) cout << a[i] << " "; /// 0 0 0 0 0
@@ -55,7 +53,6 @@ int main ()
     a = { 3, 4, 5, 1, 2 };
 
     sort ( a.begin(), a.end() ); ///O(n*log2(n))
-    
 
     for ( auto u : a ) cout << u << " "; /// 1 2 3 4 5
     cout << endl;
@@ -101,7 +98,7 @@ int main ()
     for ( auto u : a ) cout << u << " "; /// 1 2 3 2 2 3 3
     cout << endl;
 
-    // 1st a sort kore then unique kora lagbe
+
     a = { 1, 1, 2, 2, 2, 3, 3 };
     int n = unique( a.begin(), a.end() ) - a.begin();
 
@@ -113,17 +110,9 @@ int main ()
     cout << max_element( a.begin(), a.end() ) - a.begin() << endl; /// 3
     cout << *max_element( a.begin(), a.end() ) << endl; /// 5
 
-    vector<int> :: iterator it1 = max_element(v.begin(), v.end());
-    cout << *it1 << endl;
 
-    vector<int> :: iterator it2 = max_element(v.begin()+1, v.begin()+4);
-    cout << *it2 << endl;
-
-    int index = max_element(v.begin()+1, v.begin()+4) - v.begin();
-    cout << index << endl;
-
-    int index1 = min_element(v.begin(), v.end()) - v.begin();
-    cout << index << endl;
-
+    cout << a.back() << endl; // last value print korbe
+    cout << a.front() << endl; // first value print korbe
+    
     return 0;
 }
